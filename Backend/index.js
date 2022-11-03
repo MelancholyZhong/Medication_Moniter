@@ -4,7 +4,7 @@
 // but made a lot of resaerch to make it finally work.
 
 const express = require("express");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const mongoUtil = require("./mongoUtil");
 
 const app = express();
@@ -21,8 +21,8 @@ const loginRoutes = require("./routes/login-routes");
 mongoUtil.connectToClient();
 
 // with help of body parser, we can use req.body
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use(express.static("./public"));
 
